@@ -5,6 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felicidades</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5e6f7;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .tarjeta {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 36px;
+            margin: 20px 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .corazones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: heartAnimation 1.5s infinite;
+        }
+
+        .corazon {
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            animation: latido 1s infinite;
+            position: relative;
+        }
+
+        .corazon::before,
+        .corazon::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+            top: 0;
+        }
+
+        .corazon::before {
+            left: -15px;
+        }
+
+        .corazon::after {
+            top: -15px;
+            left: 0;
+        }
+
+        @keyframes latido {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes heartAnimation {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <div class="tarjeta">
